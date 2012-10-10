@@ -10,6 +10,7 @@ from django.views.generic import date_based
 from django.conf import settings
 from django.contrib import messages
 
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 import pinax.apps.account
 
@@ -26,13 +27,59 @@ import string
 import random
 
 
-def doscrappy(request, template_name="log/basic.html"):
+from mongoengine import connect
+
+import mongoobjects   
+
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for x in range(size))
+
+@login_required
+def doscrappy(request, template_name="scrap/basic.html"):
     print ' doscrappy log'
- 
-    val =  request.GET.get('q')
-    a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+    try:
+        data =  request.GET.get('q')
+        url = request.GET.get('url')
+        print data
+        print request.user
+        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+        connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
+        print  'after connect'
+                 
+        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
     
-    
+        user = None
+        users = mongoobjects.User.objects().filter(name=request.user.username)
+        print 'after users'
+        if users.count() == 0:
+            print 'adding user'
+            try:
+                user = mongoobjects.User(email = request.user.email, name = u'' + request.user.username, password = '12345')
+                user.save()
+            except Exception, ex:
+                print ex
+        else:
+        
+            user = users[0]
+
+        name = id_generator(6)
+        print 'after name'
+        c = mongoobjects.Scrap(owner = user, name = 'S_%s'%name, 
+                                 text = data, url=url )
+        c.save()
+        print "Scrap added"
+    except Exception, ex:
+        print ex
+
     
     return render_to_response(template_name, {
-    'text':val},context_instance=RequestContext(request))
+    'text':data, 'name': 'S_%s'%name},context_instance=RequestContext(request))
+    
+@csrf_exempt
+def doscrappypost(request,template_name="scrap/basic.html"):
+    print 'do scrappy post'
+    print ''
+    print request
+    
+    return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
+    
