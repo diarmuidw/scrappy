@@ -109,7 +109,7 @@
             
             
             url = encodeURIComponent(window.location.href);
-            alert(s);
+            
             postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
            // post_to_url("http://192.168.1.145:8888/scrap/logpost", { data: s});
             

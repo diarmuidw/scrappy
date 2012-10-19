@@ -1,0 +1,34 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "What Next?" %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans "Your Scraps" %}</h1>
+    
+    {% if user.is_authenticated %}
+        <p>Here are some things to do to get started with this site:</p>
+		
+		{% for s in scraps %}
+		<p>
+		<a href = "http://192.168.1.145:8888/scrap/redirect?target={{s.url}}" target="_blank">{{s.clip}}</a>
+		</p>
+
+		{% endfor %}
+		
+        </dl>
+        {% else %}
+            {% url acct_login as login_url %}
+            
+            <p class="what_next">
+                {% ifsetting ACCOUNT_OPEN_SIGNUP %}
+                    {% url acct_signup as signup_url %}
+                    {% blocktrans %}Start by <a href="{{ signup_url }}">signing up</a> and <a href="{{ login_url }}">logging in</a>.{% endblocktrans %}
+                {% else %}
+                    {% blocktrans %}Start by <a href="{{ login_url }}">logging in</a>.{% endblocktrans %}
+                {% endifsetting %}
+            </p>
+        {% endif %}
+{% endblock %}

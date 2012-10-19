@@ -6,5 +6,7 @@ urlpatterns = patterns("",
     url(r'^log/$', 'scrap.views.doscrappy', name='scrap_doscrappy'),
     url(r'^logpost/$', 'scrap.views.doscrappypost', name='scrap_doscrappypost'),
     url(r'^save/$', 'scrap.views.dosave', name='scrap_dosave'),
+    url(r'^view/$', 'scrap.views.viewlastscraps', name='scrap_view'),
+    url(r'^redirect/$', 'scrap.views.redirect', name='scrap_redirect'),
 
 )

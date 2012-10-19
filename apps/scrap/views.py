@@ -25,7 +25,7 @@ from django import forms
 import datetime
 import string
 import random
-
+import urllib2
 
 from mongoengine import connect
 
@@ -138,9 +138,52 @@ def doscrappypost(request,template_name="scrap/basic.html"):
  
  
 def dosave(request, template_name="scrap/basic.html"):
-    print ' doscrappy log'   
+    print ' simple get based on delicious'   
     print request
     
     return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
  
+def viewlastscraps(request, template_name="scrap/basicview.html"):
+    print 'view scraps'
+    print request
+    scs = []
+    try:
+
+        print request.user
+        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+        connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
+        print  'after connect'
+   
+        user = None
+        users = mongoobjects.User.objects().filter(name=request.user.username)
+        print 'after users'
+        user = users[0]
+        
+        try:
+            scraps = mongoobjects.Scrap.objects()
+            for s in scraps[:10]:
+                s1 = {}
+                s1['url'] = s.url
+                s1['clip'] = urllib2.unquote(s.text)
+                s1['created'] = s.created
+                scs.append(s1)
+                print s.url
+                print s.created
+                print s.text
+        except Exception , ex:
+            print "problem getting first image of hour"
+            cdata['firstimage'] = 'static/blank64x48.jpg'
+                    
+    except Exception, ex:
+        print ex
+    
+    return render_to_response(template_name, {'text':'aaaa', 'scraps': scs},context_instance=RequestContext(request))
+
  
+def redirect(request, template_name="scrap/basic.html"):
+    print ' simple get based on delicious'   
+    print request
+    url =  request.GET.get('target')
+    return HttpResponseRedirect(url)
+         
+    
