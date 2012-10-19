@@ -1,0 +1,282 @@
+2012.10.19 14:30:44 LOG5[64457:140735090523328]: stunnel 4.54 on x86_64-apple-darwin10.8.0 platform
+2012.10.19 14:30:44 LOG5[64457:140735090523328]: Compiled/running with OpenSSL 1.0.0e 6 Sep 2011
+2012.10.19 14:30:44 LOG5[64457:140735090523328]: Threading:PTHREAD SSL:+ENGINE+OCSP Auth:LIBWRAP Sockets:SELECT+IPv6
+2012.10.19 14:30:44 LOG5[64457:140735090523328]: Reading configuration from file stunnel/dev_https
+2012.10.19 14:30:44 LOG4[64457:140735090523328]: Insecure file permissions on stunnel/stunnel.pem
+2012.10.19 14:30:44 LOG5[64457:140735090523328]: Configuration successful
+2012.10.19 14:32:53 LOG5[64457:4295245824]: Service [https] accepted connection from 127.0.0.1:53271
+2012.10.19 14:32:53 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:32:53 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53272
+2012.10.19 14:32:53 LOG5[64457:4295245824]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:32:53 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:03 LOG5[64457:4295245824]: Service [https] accepted connection from 127.0.0.1:53273
+2012.10.19 14:33:03 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:03 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53274
+2012.10.19 14:33:03 LOG5[64457:4295323648]: Service [https] accepted connection from 127.0.0.1:53275
+2012.10.19 14:33:03 LOG3[64457:4295323648]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:33:03 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] accepted connection from 127.0.0.1:53276
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] accepted connection from 127.0.0.1:53277
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Service [https] accepted connection from 127.0.0.1:53278
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Service [https] accepted connection from 127.0.0.1:53279
+2012.10.19 14:33:04 LOG5[64457:4295634944]: Service [https] accepted connection from 127.0.0.1:53280
+2012.10.19 14:33:04 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53282
+2012.10.19 14:33:04 LOG5[64457:4295712768]: Service [https] accepted connection from 127.0.0.1:53281
+2012.10.19 14:33:04 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53283
+2012.10.19 14:33:04 LOG5[64457:4295479296]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Service [https] connected remote server from 127.0.0.1:53284
+2012.10.19 14:33:04 LOG5[64457:4295557120]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Service [https] connected remote server from 127.0.0.1:53285
+2012.10.19 14:33:04 LOG5[64457:4295712768]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295712768]: Service [https] connected remote server from 127.0.0.1:53286
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Service [https] accepted connection from 127.0.0.1:53288
+2012.10.19 14:33:04 LOG3[64457:4295790592]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Service [https] accepted connection from 127.0.0.1:53289
+2012.10.19 14:33:04 LOG3[64457:4295790592]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Connection closed: 47561 byte(s) sent to SSL, 325 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Connection closed: 6439 byte(s) sent to SSL, 317 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295634944]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295634944]: Service [https] connected remote server from 127.0.0.1:53287
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] accepted connection from 127.0.0.1:53290
+2012.10.19 14:33:04 LOG3[64457:4295323648]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] accepted connection from 127.0.0.1:53291
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Connection closed: 94220 byte(s) sent to SSL, 309 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295712768]: Connection closed: 3572 byte(s) sent to SSL, 311 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Connection closed: 26950 byte(s) sent to SSL, 306 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] accepted connection from 127.0.0.1:53292
+2012.10.19 14:33:04 LOG3[64457:4295323648]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Service [https] accepted connection from 127.0.0.1:53294
+2012.10.19 14:33:04 LOG5[64457:4295712768]: Service [https] accepted connection from 127.0.0.1:53296
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Service [https] accepted connection from 127.0.0.1:53293
+2012.10.19 14:33:04 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53298
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Service [https] accepted connection from 127.0.0.1:53295
+2012.10.19 14:33:04 LOG3[64457:4295712768]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:33:04 LOG5[64457:4295634944]: Connection closed: 8432 byte(s) sent to SSL, 311 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295712768]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295868416]: Service [https] accepted connection from 127.0.0.1:53299
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] accepted connection from 127.0.0.1:53297
+2012.10.19 14:33:04 LOG5[64457:4295868416]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295868416]: Service [https] connected remote server from 127.0.0.1:53300
+2012.10.19 14:33:04 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53301
+2012.10.19 14:33:04 LOG5[64457:4295634944]: Service [https] accepted connection from 127.0.0.1:53302
+2012.10.19 14:33:04 LOG5[64457:4295634944]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295634944]: Service [https] connected remote server from 127.0.0.1:53303
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Connection closed: 3201 byte(s) sent to SSL, 314 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] accepted connection from 127.0.0.1:53304
+2012.10.19 14:33:04 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53305
+2012.10.19 14:33:04 LOG5[64457:4295868416]: Connection closed: 2365 byte(s) sent to SSL, 309 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Connection closed: 1889 byte(s) sent to SSL, 313 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] accepted connection from 127.0.0.1:53306
+2012.10.19 14:33:04 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53307
+2012.10.19 14:33:04 LOG5[64457:4295790592]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Service [https] connected remote server from 127.0.0.1:53308
+2012.10.19 14:33:04 LOG5[64457:4295479296]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Service [https] connected remote server from 127.0.0.1:53309
+2012.10.19 14:33:04 LOG5[64457:4295634944]: Connection closed: 1988 byte(s) sent to SSL, 312 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Connection closed: 2936 byte(s) sent to SSL, 312 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295557120]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Service [https] connected remote server from 127.0.0.1:53310
+2012.10.19 14:33:04 LOG5[64457:4295790592]: Connection closed: 3724 byte(s) sent to SSL, 306 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Connection closed: 2398 byte(s) sent to SSL, 300 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:33:04 LOG5[64457:4295557120]: Connection reset: 4110 byte(s) sent to SSL, 300 byte(s) sent to socket
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] accepted connection from 127.0.0.1:53311
+2012.10.19 14:33:04 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53312
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Service [https] accepted connection from 127.0.0.1:53313
+2012.10.19 14:33:04 LOG5[64457:4295479296]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:33:04 LOG5[64457:4295479296]: Service [https] connected remote server from 127.0.0.1:53314
+2012.10.19 14:33:04 LOG5[64457:4295401472]: Connection closed: 6660 byte(s) sent to SSL, 317 byte(s) sent to socket
+2012.10.19 14:33:05 LOG3[64457:4295245824]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:33:05 LOG5[64457:4295245824]: Connection closed: 66990 byte(s) sent to SSL, 431 byte(s) sent to socket
+2012.10.19 14:33:05 LOG3[64457:4295323648]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:33:05 LOG5[64457:4295323648]: Connection closed: 1883 byte(s) sent to SSL, 330 byte(s) sent to socket
+2012.10.19 14:33:09 LOG5[64457:4295479296]: Connection closed: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53336
+2012.10.19 14:34:11 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53338
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53337
+2012.10.19 14:34:11 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53339
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:34:11 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:34:43 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53342
+2012.10.19 14:34:43 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:34:43 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53343
+2012.10.19 14:34:43 LOG3[64457:4295245824]: SSL_read: 14094416: error:14094416:SSL routines:SSL3_READ_BYTES:sslv3 alert certificate unknown
+2012.10.19 14:34:43 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:34:43 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53344
+2012.10.19 14:34:44 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:34:44 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53345
+2012.10.19 14:34:44 LOG5[64457:4295245824]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:34:44 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:34:53 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53360
+2012.10.19 14:34:53 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53361
+2012.10.19 14:34:53 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:34:53 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53362
+2012.10.19 14:34:53 LOG3[64457:4295245824]: SSL_read: 14094416: error:14094416:SSL routines:SSL3_READ_BYTES:sslv3 alert certificate unknown
+2012.10.19 14:34:53 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:34:53 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:34:53 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53363
+2012.10.19 14:34:53 LOG5[64457:4295323648]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:34:53 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:38:15 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53373
+2012.10.19 14:38:15 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:38:15 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53375
+2012.10.19 14:38:15 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53374
+2012.10.19 14:38:15 LOG3[64457:4295245824]: SSL_read: 14094416: error:14094416:SSL routines:SSL3_READ_BYTES:sslv3 alert certificate unknown
+2012.10.19 14:38:15 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:38:15 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:38:15 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53376
+2012.10.19 14:38:15 LOG5[64457:4295323648]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:38:15 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:01 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53380
+2012.10.19 14:39:01 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53381
+2012.10.19 14:39:01 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:01 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53382
+2012.10.19 14:39:01 LOG5[64457:4295245824]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:39:01 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:01 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:01 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53383
+2012.10.19 14:39:01 LOG5[64457:4295323648]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:39:01 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:08 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53384
+2012.10.19 14:39:08 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:08 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53385
+2012.10.19 14:39:08 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53386
+2012.10.19 14:39:08 LOG3[64457:4295323648]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:08 LOG5[64457:4295323648]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] accepted connection from 192.168.1.145:53388
+2012.10.19 14:39:09 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53393
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53387
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Service [https] accepted connection from 192.168.1.145:53390
+2012.10.19 14:39:09 LOG5[64457:4295634944]: Service [https] accepted connection from 192.168.1.145:53391
+2012.10.19 14:39:09 LOG5[64457:4295712768]: Service [https] accepted connection from 192.168.1.145:53392
+2012.10.19 14:39:09 LOG5[64457:4295479296]: Service [https] accepted connection from 192.168.1.145:53389
+2012.10.19 14:39:09 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53394
+2012.10.19 14:39:09 LOG5[64457:4295557120]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Service [https] connected remote server from 127.0.0.1:53395
+2012.10.19 14:39:09 LOG5[64457:4295712768]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295712768]: Service [https] connected remote server from 127.0.0.1:53396
+2012.10.19 14:39:09 LOG5[64457:4295634944]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295634944]: Service [https] connected remote server from 127.0.0.1:53397
+2012.10.19 14:39:09 LOG5[64457:4295479296]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295479296]: Service [https] connected remote server from 127.0.0.1:53398
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Connection closed: 47561 byte(s) sent to SSL, 385 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] accepted connection from 192.168.1.145:53399
+2012.10.19 14:39:09 LOG3[64457:4295401472]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Connection closed: 6439 byte(s) sent to SSL, 377 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] accepted connection from 192.168.1.145:53401
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Service [https] accepted connection from 192.168.1.145:53402
+2012.10.19 14:39:09 LOG3[64457:4295790592]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53400
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Connection closed: 94220 byte(s) sent to SSL, 369 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Service [https] accepted connection from 192.168.1.145:53404
+2012.10.19 14:39:09 LOG3[64457:4295790592]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Service [https] accepted connection from 192.168.1.145:53403
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Service [https] accepted connection from 192.168.1.145:53405
+2012.10.19 14:39:09 LOG3[64457:4295790592]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Service [https] accepted connection from 192.168.1.145:53406
+2012.10.19 14:39:09 LOG5[64457:4295868416]: Service [https] accepted connection from 192.168.1.145:53407
+2012.10.19 14:39:09 LOG3[64457:4295868416]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:09 LOG5[64457:4295868416]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295868416]: Service [https] accepted connection from 192.168.1.145:53408
+2012.10.19 14:39:09 LOG3[64457:4295790592]: SSL_accept: 1408A0D7: error:1408A0D7:SSL routines:SSL3_GET_CLIENT_HELLO:required cipher missing
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295868416]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295868416]: Service [https] connected remote server from 127.0.0.1:53409
+2012.10.19 14:39:09 LOG5[64457:4295557120]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Service [https] connected remote server from 127.0.0.1:53410
+2012.10.19 14:39:09 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53411
+2012.10.19 14:39:09 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53412
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Service [https] accepted connection from 192.168.1.145:53413
+2012.10.19 14:39:09 LOG5[64457:4295790592]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Service [https] connected remote server from 127.0.0.1:53415
+2012.10.19 14:39:09 LOG5[64457:4295946240]: Service [https] accepted connection from 192.168.1.145:53414
+2012.10.19 14:39:09 LOG5[64457:4295712768]: Connection closed: 26950 byte(s) sent to SSL, 366 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295946240]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295946240]: Service [https] connected remote server from 127.0.0.1:53416
+2012.10.19 14:39:09 LOG5[64457:4295634944]: Connection closed: 3572 byte(s) sent to SSL, 371 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295479296]: Connection closed: 8432 byte(s) sent to SSL, 371 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295868416]: Connection closed: 3201 byte(s) sent to SSL, 374 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295479296]: Service [https] accepted connection from 192.168.1.145:53417
+2012.10.19 14:39:09 LOG5[64457:4295479296]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295479296]: Service [https] connected remote server from 127.0.0.1:53418
+2012.10.19 14:39:09 LOG5[64457:4295634944]: Service [https] accepted connection from 192.168.1.145:53419
+2012.10.19 14:39:09 LOG5[64457:4295634944]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295634944]: Service [https] connected remote server from 127.0.0.1:53420
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Error detected on SSL (read) file descriptor: Connection reset by peer (54)
+2012.10.19 14:39:09 LOG5[64457:4295557120]: Connection reset: 1988 byte(s) sent to SSL, 372 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295479296]: Connection closed: 4110 byte(s) sent to SSL, 360 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Connection closed: 2365 byte(s) sent to SSL, 369 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295634944]: Connection closed: 2936 byte(s) sent to SSL, 372 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295946240]: Connection closed: 3724 byte(s) sent to SSL, 366 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295790592]: Connection closed: 2398 byte(s) sent to SSL, 360 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Connection closed: 1889 byte(s) sent to SSL, 373 byte(s) sent to socket
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] accepted connection from 192.168.1.145:53421
+2012.10.19 14:39:09 LOG5[64457:4295401472]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295401472]: Service [https] connected remote server from 127.0.0.1:53422
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53423
+2012.10.19 14:39:09 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53424
+2012.10.19 14:39:09 LOG5[64457:4295323648]: Connection closed: 6660 byte(s) sent to SSL, 377 byte(s) sent to socket
+2012.10.19 14:39:10 LOG3[64457:4295245824]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:39:10 LOG5[64457:4295245824]: Connection closed: 68044 byte(s) sent to SSL, 353 byte(s) sent to socket
+2012.10.19 14:39:10 LOG3[64457:4295401472]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:39:10 LOG5[64457:4295401472]: Connection closed: 1887 byte(s) sent to SSL, 386 byte(s) sent to socket
+2012.10.19 14:39:13 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53426
+2012.10.19 14:39:13 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:13 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53427
+2012.10.19 14:39:13 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53428
+2012.10.19 14:39:13 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:13 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53429
+2012.10.19 14:39:14 LOG3[64457:4295245824]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:39:14 LOG5[64457:4295245824]: Connection closed: 262 byte(s) sent to SSL, 532 byte(s) sent to socket
+2012.10.19 14:39:14 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53430
+2012.10.19 14:39:14 LOG3[64457:4295245824]: SSL_accept: 1408F10B: error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number
+2012.10.19 14:39:14 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:18 LOG5[64457:4295323648]: Connection closed: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:42 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53439
+2012.10.19 14:39:42 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:42 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53440
+2012.10.19 14:39:42 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53441
+2012.10.19 14:39:42 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:39:42 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53442
+2012.10.19 14:39:43 LOG3[64457:4295245824]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:39:43 LOG5[64457:4295245824]: Connection closed: 262 byte(s) sent to SSL, 822 byte(s) sent to socket
+2012.10.19 14:39:43 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53443
+2012.10.19 14:39:43 LOG3[64457:4295245824]: SSL_accept: 1408F10B: error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number
+2012.10.19 14:39:43 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:39:48 LOG5[64457:4295323648]: Connection closed: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:40:06 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53465
+2012.10.19 14:40:06 LOG5[64457:4295245824]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:40:06 LOG5[64457:4295245824]: Service [https] connected remote server from 127.0.0.1:53466
+2012.10.19 14:40:06 LOG5[64457:4295323648]: Service [https] accepted connection from 192.168.1.145:53467
+2012.10.19 14:40:06 LOG5[64457:4295323648]: connect_blocking: connected 127.0.0.1:8888
+2012.10.19 14:40:06 LOG5[64457:4295323648]: Service [https] connected remote server from 127.0.0.1:53468
+2012.10.19 14:40:07 LOG3[64457:4295245824]: transfer: s_poll_wait: TIMEOUTclose exceeded: closing
+2012.10.19 14:40:07 LOG5[64457:4295245824]: Connection closed: 262 byte(s) sent to SSL, 654 byte(s) sent to socket
+2012.10.19 14:40:07 LOG5[64457:4295245824]: Service [https] accepted connection from 192.168.1.145:53469
+2012.10.19 14:40:07 LOG3[64457:4295245824]: SSL_accept: 1408F10B: error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number
+2012.10.19 14:40:07 LOG5[64457:4295245824]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2012.10.19 14:40:11 LOG5[64457:4295323648]: Connection closed: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
