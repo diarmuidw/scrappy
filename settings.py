@@ -40,8 +40,8 @@ DATABASES = {
 MONGODATABASENAME = 'scrappy'
 MONGOHOST='ds039447.mongolab.com'
 MONGOPORT =39447
-MONGOUSERNAME='scrappyadmin'
-MONGOPASSWORD = 'orange1'
+MONGOUSERNAME='sa'
+MONGOPASSWORD = 'o1'
 
 
 # Local time zone for this installation. Choices can be found here:

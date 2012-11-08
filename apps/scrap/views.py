@@ -40,34 +40,10 @@ def doscrappy(request, template_name="scrap/basic.html"):
     try:
         data =  request.GET.get('q')
         url = request.GET.get('url')
-        print data
-        print request.user
-        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
-        connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
-        print  'after connect'
-                 
-        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
-    
-        user = None
-        users = mongoobjects.User.objects().filter(name=request.user.username)
-        print 'after users'
-        if users.count() == 0:
-            print 'adding user'
-            try:
-                user = mongoobjects.User(email = request.user.email, name = u'' + request.user.username, password = '12345')
-                user.save()
-            except Exception, ex:
-                print ex
-        else:
-        
-            user = users[0]
 
-        name = id_generator(6)
-        print 'after name'
-        c = mongoobjects.Scrap(owner = user, name = 'S_%s'%name, 
-                                 text = data, url=url )
-        c.save()
-        print "Scrap added"
+        un = request.user.username
+        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+        savescrap(un, a,data, url)
     except Exception, ex:
         print ex
 
@@ -80,42 +56,29 @@ def doscrappy(request, template_name="scrap/basic.html"):
 def doscrappypost(request,template_name="scrap/basic.html"):
     print 'do scrappy post'
     print ''
-#    data =  request.POST.get('data')
-#    url =  request.POST.get('origin')
-#    
-#    print url
-#    print 'aaaaaaa'
-#    print type(data)
-#    print dir(data)
-#    print ("" + data)
-#    
-#    u2 = data.decode('utf-8')
-#    print (u2)
-#    
-#    import unicodedata
-#    aaa = unicodedata.normalize('NFKD', u2).encode('ascii','ignore')
-#    print aaa
-    
     try:
         data =  request.POST.get('data')
         url = request.POST.get('origin')
-        print request.POST
-        print data
-        print url
-        print request.user
+        un = request.user.username
         a = pinax.apps.account.models.Account.objects.filter(user=request.user)
-        connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
-        print  'after connect'
-                 
-        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+        savescrap(un, a,data, url)
+    except Exception, ex:
+        print ex
     
+    return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
+ 
+def savescrap(un, a, data, url):
+    try:
+
+        connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
+
         user = None
-        users = mongoobjects.User.objects().filter(name=request.user.username)
+        users = mongoobjects.User.objects().filter(un)
         print 'after users'
         if users.count() == 0:
-            print 'adding user'
+
             try:
-                user = mongoobjects.User(email = request.user.email, name = u'' + request.user.username, password = '12345')
+                user = mongoobjects.User(email = request.user.email, name = u'' + un, password = '12345')
                 user.save()
             except Exception, ex:
                 print ex
@@ -124,39 +87,49 @@ def doscrappypost(request,template_name="scrap/basic.html"):
             user = users[0]
 
         name = id_generator(6)
-        print 'after name'
-        print url
+
         c = mongoobjects.Scrap(owner = user, name = 'S_%s'%name, 
                                  text = data, url=url)
         c.save()
         print "Scrap added"
     except Exception, ex:
-        print ex
-    
-    return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
- 
- 
+        print ex  
  
 def dosave(request, template_name="scrap/basic.html"):
     print ' simple get based on delicious'   
-    print request
+   
+    try:
+        data =  request.GET.get('notes')
+        url = request.GET.get('url')
+        un = request.user.username
+        
+        print data
+        print url
+        
+        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+        savescrap(un, a,data, url)
+        
+    except Exception, ex:
+        print ex
+    
+    
     
     return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
  
 def viewlastscraps(request, template_name="scrap/basicview.html"):
     print 'view scraps'
-    print request
+    
     scs = []
     try:
 
-        print request.user
+    
         a = pinax.apps.account.models.Account.objects.filter(user=request.user)
         connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
-        print  'after connect'
+
    
         user = None
         users = mongoobjects.User.objects().filter(name=request.user.username)
-        print 'after users'
+
         user = users[0]
         
         try:
@@ -167,12 +140,10 @@ def viewlastscraps(request, template_name="scrap/basicview.html"):
                 s1['clip'] = urllib2.unquote(s.text)
                 s1['created'] = s.created
                 scs.append(s1)
-                print s.url
-                print s.created
-                print s.text
+
         except Exception , ex:
-            print "problem getting first image of hour"
-            cdata['firstimage'] = 'static/blank64x48.jpg'
+            print "problem getting scraps"
+           
                     
     except Exception, ex:
         print ex
@@ -182,7 +153,7 @@ def viewlastscraps(request, template_name="scrap/basicview.html"):
  
 def redirect(request, template_name="scrap/basic.html"):
     print ' simple get based on delicious'   
-    print request
+
     url =  request.GET.get('target')
     return HttpResponseRedirect(url)
          
