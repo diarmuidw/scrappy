@@ -34,7 +34,7 @@ import mongoobjects
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for x in range(size))
 
-@login_required
+
 def doscrappy(request, template_name="scrap/basic.html"):
     print ' doscrappy log'
     try:
@@ -52,13 +52,15 @@ def doscrappy(request, template_name="scrap/basic.html"):
     'text':data, 'name': 'S_%s'%name},context_instance=RequestContext(request))
     
 @csrf_exempt
-@login_required
+
 def doscrappypost(request,template_name="scrap/basic.html"):
     print 'do scrappy post'
     print ''
     try:
         data =  request.POST.get('data')
         url = request.POST.get('origin')
+        print data
+        print url
         un = request.user.username
         a = pinax.apps.account.models.Account.objects.filter(user=request.user)
         savescrap(un, a,data, url)
@@ -69,7 +71,7 @@ def doscrappypost(request,template_name="scrap/basic.html"):
  
 def savescrap(un, a, data, url):
     try:
-
+        print "saving scarp %s "%(url)
         connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
 
         user = None

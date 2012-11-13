@@ -25,11 +25,11 @@
     function postData (data,o, url) {
 
         var f     = document.createElement('iframe'),
-            fname = (+((''+Math.random()).substring(2))).toString(36);
-
+        fname = (+((''+Math.random()).substring(2))).toString(36);
+        	
         f.setAttribute('name', fname);
         f.setAttribute('id', fname);
-        f.setAttribute('style', 'width:0;height:0;border:none;margin:none;padding:none;position:absolute;');
+        f.setAttribute('style', 'width:100;height:100;border:none;margin:none;padding:none;position:absolute;');
 
         document.body.appendChild(f);
 
@@ -40,32 +40,37 @@
             origin  = doc.createElement('textarea');
 
         text.setAttribute('name', 'data');
-        //alert (data);
+       
         text.appendChild(doc.createTextNode(data));
         
         origin.setAttribute('name', 'origin');
-        //alert (o);
+       
         origin.appendChild(doc.createTextNode(o));
         
         form.setAttribute('action', url);
         form.setAttribute('method', 'post');
         form.appendChild(text);
         form.appendChild(origin);
-
+        
         doc.body.appendChild(form);
-
+        
         //if (cb) { document.getElementById(fname).onload=cb; }
 
         doc.forms[0].submit();
+        //alert(doc.forms[0].getAttribute('action'));
+        
       }
 
     
     function post_to_url(path, params, method) {
+    	//opens a new window which is not ideal but at least it works
         var openWindow = window.open(path);
         method = method || "post"; 
+       
         var form = openWindow.document.createElement("form");
         form.setAttribute("method", method);
         form.setAttribute("action", path);
+        a
         for(var key in params) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
@@ -74,6 +79,7 @@
             form.appendChild(hiddenField);
         }
         openWindow.document.body.appendChild(form);
+        
         form.submit();
       };
       
@@ -109,12 +115,12 @@
             
             
             url = encodeURIComponent(window.location.href);
-            
-            postData( s, url, "https://192.168.1.145:8443/scrap/logpost/") ;
-           // post_to_url("http://192.168.1.145:8888/scrap/logpost", { data: s});
+
+            postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
+            //post_to_url("http://192.168.1.145:8888/scrap/logpost/", { 'data': s,'origin': url });
             
             //after post data
-           // alert("after post data");
+        
 //            
 //            
 //            if ($("#wikiframe").length == 0) {

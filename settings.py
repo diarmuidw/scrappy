@@ -37,12 +37,6 @@ DATABASES = {
     }
 }
 
-MONGODATABASENAME = 'scrappy'
-MONGOHOST='ds039447.mongolab.com'
-MONGOPORT =39447
-MONGOUSERNAME='sa'
-MONGOPASSWORD = 'o1'
-
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
