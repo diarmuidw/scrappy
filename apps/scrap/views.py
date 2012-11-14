@@ -1,6 +1,6 @@
 
 from django.shortcuts import render_to_response, get_object_or_404
-from django.http import HttpResponseRedirect, Http404, QueryDict
+from django.http import HttpResponse, HttpResponseRedirect, Http404, QueryDict
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import date_based
 from django.conf import settings
 from django.contrib import messages
-
+from django.utils import simplejson
 from django.views.decorators.csrf import csrf_exempt
 
 import pinax.apps.account
@@ -35,6 +35,11 @@ def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for x in range(size))
 
 
+def jsonify(object):
+    if isinstance(object, QuerySet):
+        return serialize('json', object)
+    return simplejson.dumps(object)
+
 def doscrappy(request, template_name="scrap/basic.html"):
     print ' doscrappy log'
     try:
@@ -49,25 +54,27 @@ def doscrappy(request, template_name="scrap/basic.html"):
 
     
     return render_to_response(template_name, {
-    'text':data, 'name': 'S_%s'%name},context_instance=RequestContext(request))
+    'text':data, 'name': 'S_%s'%url},context_instance=RequestContext(request))
     
 @csrf_exempt
-
-def doscrappypost(request,template_name="scrap/basic.html"):
+def doscrappypost(request,template_name="scrap/blank.html"):
     print 'do scrappy post'
     print ''
     try:
         data =  request.POST.get('data')
         url = request.POST.get('origin')
-        print data
-        print url
+        uniqueid = request.POST.get('uniqueid')
+        print uniqueid
         un = request.user.username
         a = pinax.apps.account.models.Account.objects.filter(user=request.user)
         savescrap(un, a,data, url)
     except Exception, ex:
         print ex
-    
-    return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
+
+    data = 123
+    print data
+    #return  HttpResponse(jsonify({'text':'aaaa', 'name': 'S_qqqqq'}), mimetype="application/json")
+    return render_to_response(template_name, {'data':data},context_instance=RequestContext(request))
  
 def savescrap(un, a, data, url):
     try:
@@ -138,7 +145,7 @@ def viewlastscraps(request, template_name="scrap/basicview.html"):
             scraps = mongoobjects.Scrap.objects()
             for s in scraps[:10]:
                 s1 = {}
-                s1['url'] = s.url
+                s1['url'] = urllib2.unquote(s.url)
                 s1['clip'] = urllib2.unquote(s.text)
                 s1['created'] = s.created
                 scs.append(s1)

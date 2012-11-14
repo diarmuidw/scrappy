@@ -166,6 +166,7 @@ INSTALLED_APPS = [
     # project
     "about",
     "scrap",
+    "comet"
 ]
 
 FIXTURE_DIRS = [

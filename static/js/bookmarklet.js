@@ -21,6 +21,23 @@
         initMyBookmarklet();
     }
 
+    function GUID ()
+    {
+        var S4 = function ()
+        {
+            return Math.floor(
+                    Math.random() * 0x10000 /* 65536 */
+                ).toString(16);
+        };
+
+        return (
+                S4() + S4() + "-" +
+                S4() + "-" +
+                S4() + "-" +
+                S4() + "-" +
+                S4() + S4() + S4()
+            );
+    }
     
     function postData (data,o, url) {
 
@@ -37,20 +54,25 @@
             doc   = frame.document,
             form  = doc.createElement('form'),
             text  = doc.createElement('textarea'),
-            origin  = doc.createElement('textarea');
+            origin  = doc.createElement('textarea'),
+            uniqueid  = doc.createElement('textarea');
 
         text.setAttribute('name', 'data');
-       
         text.appendChild(doc.createTextNode(data));
-        
+      
         origin.setAttribute('name', 'origin');
-       
         origin.appendChild(doc.createTextNode(o));
+        
+        uniqueid.setAttribute('name', 'uniqueid');
+        generatedid = GUID()
+        uniqueid.appendChild(doc.createTextNode(generatedid));        
         
         form.setAttribute('action', url);
         form.setAttribute('method', 'post');
+        
         form.appendChild(text);
         form.appendChild(origin);
+        form.appendChild(uniqueid);
         
         doc.body.appendChild(form);
         
@@ -59,6 +81,7 @@
         doc.forms[0].submit();
         //alert(doc.forms[0].getAttribute('action'));
         
+        return generatedid
       }
 
     
@@ -70,7 +93,7 @@
         var form = openWindow.document.createElement("form");
         form.setAttribute("method", method);
         form.setAttribute("action", path);
-        a
+        
         for(var key in params) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
@@ -85,7 +108,14 @@
       
     
     
-    
+      function nodeToString ( node ) {
+    	   var tmpNode = document.createElement( "div" );
+    	   tmpNode.appendChild( node.cloneNode( true ) );
+    	   var str = tmpNode.innerHTML;
+    	   tmpNode = node = null; // prevent memory leaks in IE
+    	   return str;
+    	}
+      
     function initMyBookmarklet() {
         (window.myBookmarklet = function () {
             function getSelText() {
@@ -101,82 +131,96 @@
             }
             
             
+            
+            var range = window.getSelection().getRangeAt(0);
+            var selectionContents = range.extractContents();
+            
+            var div = document.createElement("div");
+
+            
             var s = "";
-            s = getSelText();
+            s = nodeToString(div);//getSelText();
+            
             if (s == "") {
                 //var s = prompt("Forget something?");
                 var s = "Nothing selected - Just scrap the url";
             }
-           // alert(s);
-           // var n = s.replace("s","qqqqqqqqqqqq");
-            
+ 
             s = encodeURIComponent(s);
-           // alert(s.lengthc);
-            
-            
-            url = encodeURIComponent(window.location.href);
 
-            postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
-            //post_to_url("http://192.168.1.145:8888/scrap/logpost/", { 'data': s,'origin': url });
+            url = encodeURIComponent(window.location.href);
             
-            //after post data
-        
-//            
-//            
-//            if ($("#wikiframe").length == 0) {
-//                var s = "";
-//                s = getSelText();
-//                if (s == "") {
-//                    //var s = prompt("Forget something?");
-//                    var s = "Nothing selected - Just scrap the url";
-//                }
-//               // alert(s);
-//               // var n = s.replace("s","qqqqqqqqqqqq");
-//                
-//                s = encodeURIComponent(s);
-//               // alert(s.lengthc);
-//                
-//                
-//                url = encodeURIComponent(window.location.href);
-//                postData( { data: s }, "http://192.168.1.145:8888/scrap/logpost/") //doesn't work. 500 error hard to debug
-//               // post_to_url("http://192.168.1.145:8888/scrap/logpost", { data: s});
-//                
-//                //after post data
-//                alert("after post data");
-////                $.post( 
-////                        "http://192.168.1.145:8888/scrap/logpost/",
-////                        { name: "Zara" },
-////                        function(data) {
-////                           $('#stage').html(data);
-////                        }
-////                        )
-////                alert ('after post')
-//                //http://192.168.1.145:8888/scrap/log?v=1.0&q=" + item+ "&langpair=%7Cen&p=True&url="+url
-//                if ((s != "") && (s != null)) {
-//                    $("body").append("\
-//					<div id='wikiframe'>\
-//						<div id='wikiframe_veil' style=''>\
-//							<p>Loading...</p>\
-//						</div>\
-//						<iframe src='http://192.168.1.145:8888/scrap/log?v=1.0&q=" + s + "&url=" + url + "' onload=\"$('#wikiframe iframe').slideDown(500);\">Enable iFrames.</iframe>\
-//						<style type='text/css'>\
-//							#wikiframe_veil { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(255,255,255,.25); cursor: pointer; z-index: 900; }\
-//							#wikiframe_veil p { color: black; font: normal normal bold 20px/20px Helvetica, sans-serif; position: absolute; top: 50%; left: 50%; width: 10em; margin: -10px auto 0 -5em; text-align: center; }\
-//							#wikiframe iframe { display: none; position: fixed; top: 10%; left: 10%; width: 80%; height: 80%; z-index: 999; border: 10px solid rgba(0,0,0,.5); margin: -5px 0 0 -5px; }\
-//						</style>\
-//					</div>");
-//                    $("#wikiframe_veil").fadeIn(750);
-//                }
-//            } else {
-//                $("#wikiframe_veil").fadeOut(750);
-//                $("#wikiframe iframe").slideUp(500);
-//                setTimeout("$('#wikiframe').remove()", 750);
-//            }
-//            $("#wikiframe_veil").click(function (event) {
-//                $("#wikiframe_veil").fadeOut(750);
-//                $("#wikiframe iframe").slideUp(500);
-//                setTimeout("$('#wikiframe').remove()", 750);
-//            });
+            
+            colonposition = window.location.href.indexOf(":");
+            urlleader = window.location.href.substring(0,colonposition);
+            
+            if (urlleader == "http")
+            	{
+            		
+            		uniqueid = postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
+            		
+                    div.style.color = "red";
+                    
+                    div.appendChild(selectionContents);
+                    var newContent = document.createTextNode("Hi there and greetings!");
+                    var link = document.createElement('a');
+                    link.setAttribute('href', 'http://192.168.1.145:8888/scrap/' + uniqueid);
+                    link.setAttribute('target','_blank')
+                    var text = document.createTextNode("Your Scrappy!");
+                    //var hh = document.createElement("h1");
+                    link.appendChild(text)
+                    div.appendChild(link)
+                    //div.appendChild(newContent)
+                    alert(nodeToString(div));
+                    range.insertNode(div);
+                    
+            		
+            	}
+            else
+            	{
+            		//This doesn't work. Doesn't scrap but alos doesn't throw up a warning on the page
+            		//postData( s, url, "https://192.168.1.145:8888/scrap/logpost/") ;
+            		//post_to_url("http://192.168.1.145:8888/scrap/logpost/", { 'data': s,'origin': url });
+		
+		            if ($("#wikiframe").length == 0) {
+		                var s = "";
+		                s = getSelText();
+		                if (s == "") {
+		                    //var s = prompt("Forget something?");
+		                    var s = "Nothing selected - Just scrap the url";
+		                }
+		                s = encodeURIComponent(s);
+		
+		                
+		                url = encodeURIComponent(window.location.href);
+		
+		                if ((s != "") && (s != null)) {
+		                    $("body").append("\
+							<div id='wikiframe'>\
+								<div id='wikiframe_veil' style=''>\
+									<p>Loading...</p>\
+								</div>\
+								<iframe src='http://192.168.1.145:8888/scrap/log?v=1.0&q=" + s + "&url=" + url + "' onload=\"$('#wikiframe iframe').slideDown(500);\">Enable iFrames.</iframe>\
+								<style type='text/css'>\
+									#wikiframe_veil { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(255,255,255,.25); cursor: pointer; z-index: 900; }\
+									#wikiframe_veil p { color: black; font: normal normal bold 20px/20px Helvetica, sans-serif; position: absolute; top: 50%; left: 50%; width: 10em; margin: -10px auto 0 -5em; text-align: center; }\
+									#wikiframe iframe { display: none; position: fixed; top: 10%; left: 10%; width: 80%; height: 80%; z-index: 999; border: 10px solid rgba(0,0,0,.5); margin: -5px 0 0 -5px; }\
+								</style>\
+							</div>");
+		                    $("#wikiframe_veil").fadeIn(750);
+		                }
+		            } else {
+		                $("#wikiframe_veil").fadeOut(750);
+		                $("#wikiframe iframe").slideUp(500);
+		                setTimeout("$('#wikiframe').remove()", 750);
+		            }
+		            $("#wikiframe_veil").click(function (event) {
+		                $("#wikiframe_veil").fadeOut(750);
+		                $("#wikiframe iframe").slideUp(500);
+		                setTimeout("$('#wikiframe').remove()", 750);
+		            });
+            
+            	};//else
         })();
     }
 
