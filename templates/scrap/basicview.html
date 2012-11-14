@@ -9,11 +9,12 @@
     <h1>{% trans "Your Scraps" %}</h1>
     
     {% if user.is_authenticated %}
-        <p>Here are some things to do to get started with this site:</p>
+        <p>Your Scrappy!! </p>
 		
 		{% for s in scraps %}
 		<p>
 		<h3><a href = "/scrap/redirect?target={{s.url}}" target="_blank">{{s.url}}</a></h3>
+		<h3><a href = "/scrap/viewone/{{s.uniqueid}}" target="_blank">View Here</a></h3>
 		{{s.clip|safe}}
 		</p>
 

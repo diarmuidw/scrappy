@@ -16,6 +16,7 @@ class Scrap(Document):
     url = StringField(required=True)
     text = StringField(required=False)
     imagepath = StringField(required=False)
+    uniqueid = StringField(required=False)
     meta = {
         'ordering': ['-created']
     }

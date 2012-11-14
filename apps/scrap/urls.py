@@ -8,5 +8,5 @@ urlpatterns = patterns("",
     url(r'^save/$', 'scrap.views.dosave', name='scrap_dosave'),
     url(r'^view/$', 'scrap.views.viewlastscraps', name='scrap_view'),
     url(r'^redirect/$', 'scrap.views.redirect', name='scrap_redirect'),
-
+    url(r'^viewone/(?P<uniqueid>\w+)/$', 'scrap.views.viewone', name='scrap_view_one'),
 )

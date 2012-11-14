@@ -31,6 +31,11 @@ from mongoengine import connect
 
 import mongoobjects   
 
+import logging
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for x in range(size))
 
@@ -51,34 +56,30 @@ def doscrappy(request, template_name="scrap/basic.html"):
         savescrap(un, a,data, url)
     except Exception, ex:
         print ex
-
-    
     return render_to_response(template_name, {
     'text':data, 'name': 'S_%s'%url},context_instance=RequestContext(request))
     
 @csrf_exempt
 def doscrappypost(request,template_name="scrap/blank.html"):
     print 'do scrappy post'
-    print ''
+    
     try:
         data =  request.POST.get('data')
         url = request.POST.get('origin')
         uniqueid = request.POST.get('uniqueid')
-        print uniqueid
         un = request.user.username
         a = pinax.apps.account.models.Account.objects.filter(user=request.user)
-        savescrap(un, a,data, url)
+        savescrap(un, a,data, url, uniqueid)
     except Exception, ex:
         print ex
 
-    data = 123
-    print data
-    #return  HttpResponse(jsonify({'text':'aaaa', 'name': 'S_qqqqq'}), mimetype="application/json")
-    return render_to_response(template_name, {'data':data},context_instance=RequestContext(request))
+    #return  HttpResponse(jsonify(), mimetype="application/json")
+    return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
  
-def savescrap(un, a, data, url):
+def savescrap(un, a, data, url, uniqueid):
     try:
         print "saving scarp %s "%(url)
+        print uniqueid
         connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
 
         user = None
@@ -98,7 +99,7 @@ def savescrap(un, a, data, url):
         name = id_generator(6)
 
         c = mongoobjects.Scrap(owner = user, name = 'S_%s'%name, 
-                                 text = data, url=url)
+                                 text = data, url=url, uniqueid=uniqueid)
         c.save()
         print "Scrap added"
     except Exception, ex:
@@ -125,6 +126,86 @@ def dosave(request, template_name="scrap/basic.html"):
     
     return render_to_response(template_name, {'text':'aaaa', 'name': 'S_qqqqq'},context_instance=RequestContext(request))
  
+ 
+ 
+def viewone(request, uniqueid = 0, template_name="scrap/basicview.html"):
+    '''
+    Called when a user clicks on a scrap icon on the page
+    Just redirect to the
+    '''
+    print "getting scrap %s"%uniqueid
+    scs = []
+    try:
+
+    
+        a = pinax.apps.account.models.Account.objects.filter(user=request.user)
+        connect (settings.MONGODATABASENAME,host=settings.MONGOHOST, port =settings.MONGOPORT, username=settings.MONGOUSERNAME, password = settings.MONGOPASSWORD)
+
+   
+        user = None
+        users = mongoobjects.User.objects().filter(name=request.user.username)
+
+        user = users[0]
+        
+        try:
+            scraps = mongoobjects.Scrap.objects(uniqueid=uniqueid)
+            for s in scraps[:10]:
+                s1 = {}
+                s1['url'] = urllib2.unquote(s.url)
+                s1['clip'] =  replacehrefs(urllib2.unquote(s.url), urllib2.unquote(s.text), s.uniqueid)
+                s1['created'] = s.created
+                s1['uniqueid'] = s.uniqueid
+                scs.append(s1)
+
+        except Exception , ex:
+            print "problem getting scraps"
+           
+                    
+    except Exception, ex:
+        print ex
+    
+    return render_to_response(template_name, {'text':'aaaa', 'scraps': scs},context_instance=RequestContext(request))
+
+
+from BeautifulSoup import BeautifulSoup
+import urllib2
+import re
+
+def replacehrefs(url, data, uniqueid =0 ):
+    '''
+    will replace the links with our own links. Maybe spnsored?
+    
+    '''
+    print 'qqqqq'
+    print data
+    if uniqueid == None:
+        uniqueid = "Veryold"
+    newdata = ''
+    if len(data) > 0:
+        soup = BeautifulSoup(data)
+        for link in soup.findAll('a'):
+            linkhref = link.get('href')
+            print linkhref
+            print url
+            if linkhref[:4]=="http":
+                pass
+            elif linkhref[0] == "/" and url[-1] =="/":
+                #need to prefix the link with the url
+                linkhref = url[:-1] + linkhref
+            elif linkhref[0] == "/" and url[-1] !="/":
+                linkhref = url + linkhref
+            elif linkhref[0] != "/" and url =="/":
+                linkhref = url + linkhref    
+            elif linkhref[0] != "/" and url !="/":
+                linkhref = url +"/" + linkhref
+                           
+            link['href'] =  "/scrap/redirect?src=" + uniqueid + "&target="  +linkhref
+            
+            
+    return str(soup)
+
+
+ 
 def viewlastscraps(request, template_name="scrap/basicview.html"):
     print 'view scraps'
     
@@ -143,14 +224,18 @@ def viewlastscraps(request, template_name="scrap/basicview.html"):
         
         try:
             scraps = mongoobjects.Scrap.objects()
-            for s in scraps[:10]:
+            for s in scraps[:30]:
                 s1 = {}
                 s1['url'] = urllib2.unquote(s.url)
-                s1['clip'] = urllib2.unquote(s.text)
+                
+                s1['clip'] = replacehrefs(urllib2.unquote(s.url), urllib2.unquote(s.text), s.uniqueid)
                 s1['created'] = s.created
+                s1['uniqueid'] = s.uniqueid
                 scs.append(s1)
 
         except Exception , ex:
+            
+            print ex
             print "problem getting scraps"
            
                     

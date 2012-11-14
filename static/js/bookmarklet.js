@@ -29,14 +29,14 @@
                     Math.random() * 0x10000 /* 65536 */
                 ).toString(16);
         };
-
-        return (
-                S4() + S4() + "-" +
-                S4() + "-" +
-                S4() + "-" +
-                S4() + "-" +
-                S4() + S4() + S4()
-            );
+           return S4() +S4();
+//        return (
+//                S4() + S4() + "-" +
+//                S4() + "-" +
+//                S4() + "-" +
+//                S4() + "-" +
+//                S4() + S4() + S4()
+//            );
     }
     
     function postData (data,o, url) {
@@ -132,48 +132,84 @@
             
             
             
-            var range = window.getSelection().getRangeAt(0);
-            var selectionContents = range.extractContents();
-            
-            var div = document.createElement("div");
-
-            
-            var s = "";
-            s = nodeToString(div);//getSelText();
-            
-            if (s == "") {
-                //var s = prompt("Forget something?");
-                var s = "Nothing selected - Just scrap the url";
-            }
- 
-            s = encodeURIComponent(s);
-
-            url = encodeURIComponent(window.location.href);
-            
-            
             colonposition = window.location.href.indexOf(":");
             urlleader = window.location.href.substring(0,colonposition);
+                              
             
+            
+
             if (urlleader == "http")
             	{
             		
-            		uniqueid = postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
-            		
-                    div.style.color = "red";
+            		var version = 3
+                    var range = window.getSelection().getRangeAt(0);
+                    var selectionContents = range.extractContents();
+                    var s = "";
+                    s = nodeToString(selectionContents);//getSelText();
                     
-                    div.appendChild(selectionContents);
-                    var newContent = document.createTextNode("Hi there and greetings!");
-                    var link = document.createElement('a');
-                    link.setAttribute('href', 'http://192.168.1.145:8888/scrap/' + uniqueid);
-                    link.setAttribute('target','_blank')
-                    var text = document.createTextNode("Your Scrappy!");
-                    //var hh = document.createElement("h1");
-                    link.appendChild(text)
-                    div.appendChild(link)
-                    //div.appendChild(newContent)
-                    alert(nodeToString(div));
-                    range.insertNode(div);
-                    
+                    if (s == "") {
+                        //var s = prompt("Forget something?");
+                        var s = "Nothing selected - Just scrap the url";
+                    }
+         
+                    s = encodeURIComponent(s);
+
+                    url = encodeURIComponent(window.location.href);
+
+
+            		if (version ==1)
+            			{
+		            		uniqueid = postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
+		            		var div = document.createElement("div");
+		                    div.style.color = "red";
+		                    div.appendChild(selectionContents);
+		                    var newContent = document.createTextNode("Hi there and greetings!");
+		                    var link = document.createElement('a');
+		                    link.setAttribute('href', 'http://192.168.1.145:8888/scrap/viewone/' + uniqueid);
+		                    link.setAttribute('target','_blank')
+		                    var text = document.createTextNode("Your Scrappy!");
+		                    link.appendChild(text)
+		                    div.appendChild(link)
+		                    
+		                    range.insertNode(div);
+            			}
+            		else if(version ==2)
+            			{
+            			//try without the div as it is causing a newline
+		            		uniqueid = postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
+		            		var link = document.createElement('a');
+		                    link.style.color = "red";
+		                    link.appendChild(selectionContents);
+		                    link.setAttribute('href', 'http://192.168.1.145:8888/scrap/viewone/' + uniqueid);
+		                    link.setAttribute('target','_blank')
+		                    var text = document.createTextNode("Your Scrappy!");
+		                    //var hh = document.createElement("h1");
+		                    link.appendChild(text)
+		                    //div.appendChild(link)
+
+		                    range.insertNode(link);
+
+            			}
+            		else
+            			{
+            			//try with an image as the link
+	            		uniqueid = postData( s, url, "http://192.168.1.145:8888/scrap/logpost/") ;
+	            		var linkimage = document.createElement('img');
+	            		linkimage.setAttribute('src',"http://192.168.1.145:8888/site_media/static/images/mm_20_blue.png")
+	            		var link = document.createElement('a');
+	                    link.style.color = "red";
+	                    link.appendChild(selectionContents);
+	                    link.setAttribute('href', 'http://192.168.1.145:8888/scrap/viewone/' +uniqueid);
+	                    link.setAttribute('target','_blank')
+	                    var text = document.createTextNode("Your Scrappy!");
+	                    //var hh = document.createElement("h1");
+	                    link.appendChild(linkimage)
+	                    alert(nodeToString(link))
+	                    range.insertNode(link);            			
+            			
+            			
+            			}
+            	
             		
             	}
             else
