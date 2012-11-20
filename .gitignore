@@ -8,5 +8,6 @@
 *.swp
 *.out
 local_settings.py
+_build
 
 

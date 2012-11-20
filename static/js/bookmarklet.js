@@ -46,7 +46,7 @@
         	
         f.setAttribute('name', fname);
         f.setAttribute('id', fname);
-        f.setAttribute('style', 'width:100;height:100;border:none;margin:none;padding:none;position:absolute;');
+        f.setAttribute('style', 'width:0;height:0;border:none;margin:none;padding:none;position:absolute;');
 
         document.body.appendChild(f);
 
@@ -79,7 +79,7 @@
         //if (cb) { document.getElementById(fname).onload=cb; }
 
         doc.forms[0].submit();
-        //alert(doc.forms[0].getAttribute('action'));
+        ////alert(doc.forms[0].getAttribute('action'));
         
         return generatedid
       }
@@ -115,7 +115,39 @@
     	   tmpNode = node = null; // prevent memory leaks in IE
     	   return str;
     	}
-      
+     
+    function changepage(uniqueid){
+    
+        var range = window.getSelection().getRangeAt(0);
+        var selectionContents = range.extractContents();
+        var s = "";
+        s = nodeToString(selectionContents);//getSelText();
+        
+        if (s == "") {
+            //var s = prompt("Forget something?");
+            var s = "Nothing selected - Just scrap the url";
+        }
+
+        s = encodeURIComponent(s);
+
+        url = encodeURIComponent(window.location.href);
+
+		var linkimage = document.createElement('img');
+		linkimage.setAttribute('src',"http://192.168.1.145:8888/site_media/static/images/mm_20_blue.png")
+		var link = document.createElement('a');
+        link.style.color = "red";
+        link.appendChild(selectionContents);
+        link.setAttribute('href', 'http://192.168.1.145:8888/scrap/viewone/' +uniqueid);
+        link.setAttribute('target','_blank')
+        var text = document.createTextNode("Your Scrappy!");
+        //var hh = document.createElement("h1");
+        link.appendChild(linkimage)
+        //alert(nodeToString(link))
+        range.insertNode(link);   
+    	
+    	
+    	
+    }
     function initMyBookmarklet() {
         (window.myBookmarklet = function () {
             function getSelText() {
@@ -204,7 +236,7 @@
 	                    var text = document.createTextNode("Your Scrappy!");
 	                    //var hh = document.createElement("h1");
 	                    link.appendChild(linkimage)
-	                    alert(nodeToString(link))
+	                    //alert(nodeToString(link))
 	                    range.insertNode(link);            			
             			
             			
@@ -226,7 +258,8 @@
 		                    var s = "Nothing selected - Just scrap the url";
 		                }
 		                s = encodeURIComponent(s);
-		
+		                uniqueid = GUID();
+		                changepage(uniqueid);
 		                
 		                url = encodeURIComponent(window.location.href);
 		
@@ -236,7 +269,7 @@
 								<div id='wikiframe_veil' style=''>\
 									<p>Loading...</p>\
 								</div>\
-								<iframe src='http://192.168.1.145:8888/scrap/log?v=1.0&q=" + s + "&url=" + url + "' onload=\"$('#wikiframe iframe').slideDown(500);\">Enable iFrames.</iframe>\
+								<iframe src='http://192.168.1.145:8888/scrap/log?uniqueid=" + uniqueid + "&v=1.0&q=" + s + "&url=" + url + "' onload=\"$('#wikiframe iframe').slideDown(500);\">Enable iFrames.</iframe>\
 								<style type='text/css'>\
 									#wikiframe_veil { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(255,255,255,.25); cursor: pointer; z-index: 900; }\
 									#wikiframe_veil p { color: black; font: normal normal bold 20px/20px Helvetica, sans-serif; position: absolute; top: 50%; left: 50%; width: 10em; margin: -10px auto 0 -5em; text-align: center; }\

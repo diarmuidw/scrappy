@@ -9,4 +9,6 @@ urlpatterns = patterns("",
     url(r'^view/$', 'scrap.views.viewlastscraps', name='scrap_view'),
     url(r'^redirect/$', 'scrap.views.redirect', name='scrap_redirect'),
     url(r'^viewone/(?P<uniqueid>\w+)/$', 'scrap.views.viewone', name='scrap_view_one'),
+    url(r'^embed/$', 'scrap.views.viewembedded', name='scrap_embed'),
+    
 )

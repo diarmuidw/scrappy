@@ -1,0 +1,192 @@
+>>> Running pep8...
+apps/about/urls.py:6:80: E501 line too long (83 > 79 characters)
+apps/about/urls.py:7:80: E501 line too long (89 > 79 characters)
+apps/about/urls.py:8:80: E501 line too long (95 > 79 characters)
+apps/about/urls.py:9:80: E501 line too long (86 > 79 characters)
+apps/about/urls.py:10:80: E501 line too long (101 > 79 characters)
+apps/about/urls.py:6:5: E128 continuation line under-indented for visual indent
+apps/about/views.py:2:1: W391 blank line at end of file
+apps/scrap/mongoobjects.py:8:12: E225 missing whitespace around operator
+apps/scrap/mongoobjects.py:11:51: E251 no spaces around keyword / parameter equals
+apps/scrap/mongoobjects.py:11:53: E251 no spaces around keyword / parameter equals
+apps/scrap/mongoobjects.py:13:1: E302 expected 2 blank lines, found 1
+apps/scrap/mongoobjects.py:15:51: E251 no spaces around keyword / parameter equals
+apps/scrap/mongoobjects.py:15:53: E251 no spaces around keyword / parameter equals
+apps/scrap/urls.py:7:80: E501 line too long (80 > 79 characters)
+apps/scrap/urls.py:11:80: E501 line too long (87 > 79 characters)
+apps/scrap/urls.py:6:5: E128 continuation line under-indented for visual indent
+apps/scrap/views.py:24:1: W293 blank line contains whitespace
+apps/scrap/views.py:32:20: W291 trailing whitespace
+apps/scrap/views.py:39:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:48:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:51:15: E222 multiple spaces after operator
+apps/scrap/views.py:56:24: E231 missing whitespace after ','
+apps/scrap/views.py:60:5: E122 continuation line missing indentation or outdented
+apps/scrap/views.py:60:11: E231 missing whitespace after ':'
+apps/scrap/views.py:60:37: E231 missing whitespace after ','
+apps/scrap/views.py:60:32: E225 missing whitespace around operator
+apps/scrap/views.py:61:1: W293 blank line contains whitespace
+apps/scrap/views.py:62:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:63:26: E231 missing whitespace after ','
+apps/scrap/views.py:65:1: W293 blank line contains whitespace
+apps/scrap/views.py:67:15: E222 multiple spaces after operator
+apps/scrap/views.py:72:24: E231 missing whitespace after ','
+apps/scrap/views.py:77:80: E501 line too long (121 > 79 characters)
+apps/scrap/views.py:77:53: E231 missing whitespace after ':'
+apps/scrap/views.py:77:80: E231 missing whitespace after ','
+apps/scrap/views.py:78:1: W293 blank line contains whitespace
+apps/scrap/views.py:79:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:81:33: E225 missing whitespace around operator
+apps/scrap/views.py:83:80: E501 line too long (162 > 79 characters)
+apps/scrap/views.py:83:44: E231 missing whitespace after ','
+apps/scrap/views.py:83:74: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:83:137: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:83:139: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:83:16: E211 whitespace before '('
+apps/scrap/views.py:92:80: E501 line too long (105 > 79 characters)
+apps/scrap/views.py:92:47: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:92:49: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:92:74: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:92:76: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:92:95: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:92:97: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:102:65: W291 trailing whitespace
+apps/scrap/views.py:103:34: E127 continuation line over-indented for visual indent
+apps/scrap/views.py:102:59: E225 missing whitespace around operator
+apps/scrap/views.py:102:37: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:102:39: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:102:50: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:102:52: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:103:38: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:103:40: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:107:17: W291 trailing whitespace
+apps/scrap/views.py:108:1: W293 blank line contains whitespace
+apps/scrap/views.py:109:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:110:43: W291 trailing whitespace
+apps/scrap/views.py:111:1: W293 blank line contains whitespace
+apps/scrap/views.py:113:15: E222 multiple spaces after operator
+apps/scrap/views.py:116:1: W293 blank line contains whitespace
+apps/scrap/views.py:119:1: W293 blank line contains whitespace
+apps/scrap/views.py:121:24: E231 missing whitespace after ','
+apps/scrap/views.py:122:1: W293 blank line contains whitespace
+apps/scrap/views.py:125:1: W293 blank line contains whitespace
+apps/scrap/views.py:126:1: W293 blank line contains whitespace
+apps/scrap/views.py:127:1: W293 blank line contains whitespace
+apps/scrap/views.py:128:80: E501 line too long (121 > 79 characters)
+apps/scrap/views.py:128:5: E303 too many blank lines (3)
+apps/scrap/views.py:128:53: E231 missing whitespace after ':'
+apps/scrap/views.py:128:80: E231 missing whitespace after ','
+apps/scrap/views.py:129:1: W293 blank line contains whitespace
+apps/scrap/views.py:130:1: W293 blank line contains whitespace
+apps/scrap/views.py:131:1: W293 blank line contains whitespace
+apps/scrap/views.py:132:1: E303 too many blank lines (3)
+apps/scrap/views.py:132:30: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:132:32: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:137:29: E225 missing whitespace around operator
+apps/scrap/views.py:141:1: W293 blank line contains whitespace
+apps/scrap/views.py:142:9: E303 too many blank lines (2)
+apps/scrap/views.py:143:80: E501 line too long (162 > 79 characters)
+apps/scrap/views.py:143:44: E231 missing whitespace after ','
+apps/scrap/views.py:143:74: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:143:137: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:143:139: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:143:16: E211 whitespace before '('
+apps/scrap/views.py:145:1: W293 blank line contains whitespace
+apps/scrap/views.py:146:9: E303 too many blank lines (2)
+apps/scrap/views.py:150:1: W293 blank line contains whitespace
+apps/scrap/views.py:156:80: E501 line too long (103 > 79 characters)
+apps/scrap/views.py:156:29: E222 multiple spaces after operator
+apps/scrap/views.py:161:25: E203 whitespace before ','
+apps/scrap/views.py:163:1: W293 blank line contains whitespace
+apps/scrap/views.py:164:1: W293 blank line contains whitespace
+apps/scrap/views.py:165:5: E303 too many blank lines (2)
+apps/scrap/views.py:167:1: W293 blank line contains whitespace
+apps/scrap/views.py:168:80: E501 line too long (117 > 79 characters)
+apps/scrap/views.py:168:53: E231 missing whitespace after ':'
+apps/scrap/views.py:168:76: E231 missing whitespace after ','
+apps/scrap/views.py:175:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:177:80: E501 line too long (87 > 79 characters)
+apps/scrap/views.py:179:1: W293 blank line contains whitespace
+apps/scrap/views.py:180:1: E302 expected 2 blank lines, found 1
+apps/scrap/views.py:180:40: E202 whitespace before ')'
+apps/scrap/views.py:180:37: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:183:1: W293 blank line contains whitespace
+apps/scrap/views.py:186:17: E711 comparison to None should be 'if cond is None:'
+apps/scrap/views.py:193:28: E225 missing whitespace around operator
+apps/scrap/views.py:195:51: E225 missing whitespace around operator
+apps/scrap/views.py:198:51: E225 missing whitespace around operator
+apps/scrap/views.py:200:47: E225 missing whitespace around operator
+apps/scrap/views.py:201:42: W291 trailing whitespace
+apps/scrap/views.py:202:47: E225 missing whitespace around operator
+apps/scrap/views.py:203:33: E225 missing whitespace around operator
+apps/scrap/views.py:204:1: W293 blank line contains whitespace
+apps/scrap/views.py:205:80: E501 line too long (85 > 79 characters)
+apps/scrap/views.py:205:78: E225 missing whitespace around operator
+apps/scrap/views.py:205:27: E222 multiple spaces after operator
+apps/scrap/views.py:205:75: E221 multiple spaces before operator
+apps/scrap/views.py:207:1: W293 blank line contains whitespace
+apps/scrap/views.py:208:1: W293 blank line contains whitespace
+apps/scrap/views.py:209:5: E303 too many blank lines (2)
+apps/scrap/views.py:212:1: W293 blank line contains whitespace
+apps/scrap/views.py:213:1: E303 too many blank lines (3)
+apps/scrap/views.py:215:1: W293 blank line contains whitespace
+apps/scrap/views.py:219:1: W293 blank line contains whitespace
+apps/scrap/views.py:220:9: E303 too many blank lines (2)
+apps/scrap/views.py:221:80: E501 line too long (162 > 79 characters)
+apps/scrap/views.py:221:44: E231 missing whitespace after ','
+apps/scrap/views.py:221:74: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:221:137: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:221:139: E251 no spaces around keyword / parameter equals
+apps/scrap/views.py:221:16: E211 whitespace before '('
+apps/scrap/views.py:223:1: W293 blank line contains whitespace
+apps/scrap/views.py:224:9: E303 too many blank lines (2)
+apps/scrap/views.py:228:1: W293 blank line contains whitespace
+apps/scrap/views.py:234:1: W293 blank line contains whitespace
+apps/scrap/views.py:235:80: E501 line too long (102 > 79 characters)
+apps/scrap/views.py:240:25: E203 whitespace before ','
+apps/scrap/views.py:241:1: W293 blank line contains whitespace
+apps/scrap/views.py:244:1: W293 blank line contains whitespace
+apps/scrap/views.py:245:1: W293 blank line contains whitespace
+apps/scrap/views.py:246:5: E303 too many blank lines (2)
+apps/scrap/views.py:248:1: W293 blank line contains whitespace
+apps/scrap/views.py:249:80: E501 line too long (117 > 79 characters)
+apps/scrap/views.py:249:53: E231 missing whitespace after ':'
+apps/scrap/views.py:249:76: E231 missing whitespace after ','
+apps/scrap/views.py:251:1: W293 blank line contains whitespace
+apps/scrap/views.py:253:43: W291 trailing whitespace
+apps/scrap/views.py:255:10: E222 multiple spaces after operator
+apps/scrap/views.py:257:1: W293 blank line contains whitespace
+apps/scrap/views.py:258:1: W391 blank line at end of file
+apps/scrap/views.py:258:1: W293 blank line contains whitespace
+clean.py:24:1: W293 blank line contains whitespace
+clean.py:25:1: W391 blank line at end of file
+clean.py:25:1: W293 blank line contains whitespace
+local_settings.py:2:10: E225 missing whitespace around operator
+local_settings.py:3:12: E225 missing whitespace around operator
+local_settings.py:4:14: E225 missing whitespace around operator
+local_settings.py:8:1: W391 blank line at end of file
+manage.py:8:9: E128 continuation line under-indented for visual indent
+settings.py:31:80: E501 line too long (122 > 79 characters)
+settings.py:32:80: E501 line too long (92 > 79 characters)
+settings.py:35:80: E501 line too long (107 > 79 characters)
+settings.py:36:80: E501 line too long (105 > 79 characters)
+settings.py:31:48: E261 at least two spaces before inline comment
+settings.py:129:1: W293 blank line contains whitespace
+settings.py:131:1: W293 blank line contains whitespace
+settings.py:133:1: W293 blank line contains whitespace
+settings.py:146:1: W293 blank line contains whitespace
+settings.py:148:1: W293 blank line contains whitespace
+settings.py:151:1: W293 blank line contains whitespace
+settings.py:161:1: W293 blank line contains whitespace
+settings.py:165:1: W293 blank line contains whitespace
+settings.py:191:30: E261 at least two spaces before inline comment
+settings.py:207:80: E501 line too long (95 > 79 characters)
+settings.py:220:18: E231 missing whitespace after ':'
+urls.py:15:5: E128 continuation line under-indented for visual indent
+urls.py:16:37: E126 continuation line over-indented for hanging indent
+urls.py:17:37: E123 closing bracket does not match indentation of opening bracket's line
+urls.py:31:9: E128 continuation line under-indented for visual indent
+wsgi.py:11:28: W292 no newline at end of file
+
+ERROR: pep8 failed on some source files
+ERROR: please fix the errors and re-run this script
