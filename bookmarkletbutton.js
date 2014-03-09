@@ -1,0 +1,1 @@
+javascript:%20(function%20()%20{%20var%20jsCode%20=%20document.createElement('script');%20jsCode.setAttribute('src',%20'http://192.168.1.145:8888/site_media/static/js/bookmarklet.js?r='+Math.random()*99999999);%20%20%20document.body.appendChild(jsCode);%20%20}());
